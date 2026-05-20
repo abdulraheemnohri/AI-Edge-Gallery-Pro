@@ -1,0 +1,8 @@
+{
+  "name": "agent.extra_5",
+  "model": "Gemma4_E2B",
+  "trigger": ["agent task 5"],
+  "input": {},
+  "risk": "low",
+  "steps": ["placeholder_step"]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "system.toggle_wifi",
+  "model": "FunctionGemma_270M_Mobile_Actions",
+  "trigger": ["turn on wifi", "toggle wifi"],
+  "input": {},
+  "risk": "medium",
+  "steps": ["android_wifi_toggle"]
+}

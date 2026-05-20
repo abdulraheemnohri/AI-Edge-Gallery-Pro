@@ -1,0 +1,8 @@
+{
+  "name": "mobile.send_message",
+  "model": "FunctionGemma_270M_Mobile_Actions",
+  "trigger": ["send message", "text someone"],
+  "input": { "contact": "string", "message": "string" },
+  "risk": "high",
+  "steps": ["open_messaging_app", "fill_message", "send"]
+}

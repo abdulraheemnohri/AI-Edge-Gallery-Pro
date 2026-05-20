@@ -1,0 +1,8 @@
+{
+  "name": "agent.autopilot",
+  "model": "Gemma4_E2B",
+  "trigger": ["do everything", "handle it automatically"],
+  "input": { "task": "string" },
+  "risk": "high",
+  "steps": ["plan", "execute_chain", "verify"]
+}

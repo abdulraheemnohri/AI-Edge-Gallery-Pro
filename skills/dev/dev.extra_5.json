@@ -1,0 +1,8 @@
+{
+  "name": "dev.extra_5",
+  "model": "Gemma4_E2B",
+  "trigger": ["dev task 5"],
+  "input": {},
+  "risk": "low",
+  "steps": ["placeholder_step"]
+}

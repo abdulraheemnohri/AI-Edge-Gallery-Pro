@@ -1,0 +1,8 @@
+{
+  "name": "ai.plan_task",
+  "model": "Gemma4_E2B",
+  "trigger": ["plan this", "make plan", "organize steps"],
+  "input": { "goal": "string" },
+  "risk": "low",
+  "steps": ["analyze_goal", "break_steps", "prioritize"]
+}

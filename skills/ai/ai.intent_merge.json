@@ -1,0 +1,8 @@
+{
+  "name": "ai.intent_merge",
+  "model": "Gemma4_E2B",
+  "trigger": ["combine tasks", "merge requests"],
+  "input": { "tasks": "array" },
+  "risk": "low",
+  "steps": ["merge_intents"]
+}

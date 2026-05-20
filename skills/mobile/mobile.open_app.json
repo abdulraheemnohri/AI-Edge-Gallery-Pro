@@ -1,0 +1,8 @@
+{
+  "name": "mobile.open_app",
+  "model": "FunctionGemma_270M_Mobile_Actions",
+  "trigger": ["open app", "launch app"],
+  "input": { "app_name": "string" },
+  "risk": "low",
+  "steps": ["resolve_package", "launch_intent"]
+}

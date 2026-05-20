@@ -1,0 +1,8 @@
+{
+  "name": "ai.extra_12",
+  "model": "Gemma4_E2B",
+  "trigger": ["ai task 12"],
+  "input": {},
+  "risk": "low",
+  "steps": ["placeholder_step"]
+}

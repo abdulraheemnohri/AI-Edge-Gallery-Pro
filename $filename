@@ -1,0 +1,8 @@
+{
+  "name": "${category}.extra_${i}",
+  "model": "Gemma4_E2B",
+  "trigger": ["${category} task ${i}"],
+  "input": {},
+  "risk": "low",
+  "steps": ["placeholder_step"]
+}

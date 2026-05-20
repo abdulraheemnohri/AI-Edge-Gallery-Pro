@@ -1,0 +1,8 @@
+{
+  "name": "system.extra_11",
+  "model": "Gemma4_E2B",
+  "trigger": ["system task 11"],
+  "input": {},
+  "risk": "low",
+  "steps": ["placeholder_step"]
+}
