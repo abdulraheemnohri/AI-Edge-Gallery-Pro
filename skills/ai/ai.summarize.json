@@ -1,0 +1,8 @@
+{
+  "name": "ai.summarize",
+  "model": "Gemma4_E2B",
+  "trigger": ["summarize", "shorten this", "tl;dr"],
+  "input": { "text": "string" },
+  "risk": "low",
+  "steps": ["compress_information"]
+}

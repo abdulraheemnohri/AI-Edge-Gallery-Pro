@@ -1,0 +1,8 @@
+{
+  "name": "dev.generate_code",
+  "model": "Gemma4_E2B",
+  "trigger": ["write code", "generate function"],
+  "input": { "task": "string" },
+  "risk": "low",
+  "steps": ["code_generation"]
+}

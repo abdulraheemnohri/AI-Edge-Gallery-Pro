@@ -1,0 +1,8 @@
+{
+  "name": "mobile.extra_7",
+  "model": "Gemma4_E2B",
+  "trigger": ["mobile task 7"],
+  "input": {},
+  "risk": "low",
+  "steps": ["placeholder_step"]
+}

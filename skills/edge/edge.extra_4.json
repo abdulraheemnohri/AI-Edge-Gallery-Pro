@@ -1,0 +1,8 @@
+{
+  "name": "edge.extra_4",
+  "model": "Gemma4_E2B",
+  "trigger": ["edge task 4"],
+  "input": {},
+  "risk": "low",
+  "steps": ["placeholder_step"]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "edge.translate_offline",
+  "model": "Gemma4_E2B",
+  "trigger": ["translate", "convert language"],
+  "input": { "text": "string", "lang": "string" },
+  "risk": "low",
+  "steps": ["language_detect", "translate_local"]
+}

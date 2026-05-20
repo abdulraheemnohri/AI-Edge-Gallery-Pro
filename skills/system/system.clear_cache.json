@@ -1,0 +1,8 @@
+{
+  "name": "system.clear_cache",
+  "model": "FunctionGemma_270M_Mobile_Actions",
+  "trigger": ["clear cache", "free storage"],
+  "input": {},
+  "risk": "medium",
+  "steps": ["scan_cache", "delete_temp_files"]
+}
