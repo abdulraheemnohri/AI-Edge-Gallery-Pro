@@ -2,22 +2,24 @@ package com.ai.edge.pro.core
 
 import android.content.Context
 import android.util.Log
-import com.google.gson.Gson
-import java.io.File
+import com.ai.edge.pro.skills.SkillLoader
 import javax.inject.Inject
 import javax.inject.Singleton
 
 private const val TAG = "ProSkillRegistry"
 
 @Singleton
-class SkillRegistry @Inject constructor() {
+class SkillRegistry @Inject constructor(
+    private val loader: SkillLoader
+) {
 
     private val skills = mutableMapOf<String, ProSkill>()
 
-    fun loadSkills(context: Context) {
-        val root = "skills" // Simplified for now, in assets or filesDir
-        // In a real app, we'd list files in the skills directory
-        Log.d(TAG, "Loading skills...")
+    fun initialize() {
+        Log.d(TAG, "Initializing Skill Registry...")
+        val loadedSkills = loader.loadAllSkills()
+        loadedSkills.forEach { registerSkill(it) }
+        Log.d(TAG, "Registered ${skills.size} skills")
     }
 
     fun registerSkill(skill: ProSkill) {
@@ -25,11 +27,12 @@ class SkillRegistry @Inject constructor() {
     }
 
     fun findBestMatch(intent: String, context: Map<String, Any>): ProSkill? {
-        // Simple trigger-based matching for now
         return skills.values.firstOrNull { skill ->
             skill.trigger.any { intent.contains(it, ignoreCase = true) }
         }
     }
+
+    fun getAllSkills(): List<ProSkill> = skills.values.toList()
 }
 
 data class ProSkill(
