@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.Log
 import com.google.ai.edge.gallery.data.Model
 import com.google.ai.edge.gallery.runtime.LlmModelHelper
-import com.google.ai.edge.gallery.ui.llmchat.LlmChatModelHelper
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.Dispatchers
