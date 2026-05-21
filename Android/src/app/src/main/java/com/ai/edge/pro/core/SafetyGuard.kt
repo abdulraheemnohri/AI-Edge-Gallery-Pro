@@ -4,16 +4,25 @@ import android.util.Log
 import javax.inject.Inject
 import javax.inject.Singleton
 
-private const val TAG = "ProSafetyGuard"
-
 @Singleton
 class SafetyGuard @Inject constructor() {
 
+    private var autonomousModeEnabled: Boolean = false
+
+    fun setAutonomousMode(enabled: Boolean) {
+        this.autonomousModeEnabled = enabled
+    }
+
     fun checkRisk(skill: ProSkill): RiskAssessment {
-        Log.d(TAG, "Checking risk for skill: ${skill.name}")
+        Log.d("ProSafetyGuard", "Checking risk for skill: ${skill.name} (AutoMode: $autonomousModeEnabled)")
+
+        if (autonomousModeEnabled && skill.risk != "high") {
+            return RiskAssessment.ALLOWED
+        }
+
         return when (skill.risk) {
-            "high" -> RiskAssessment.REJECTED // Simple rule for placeholder
-            "medium" -> RiskAssessment.NEEDS_USER_CONFIRMATION
+            "high" -> RiskAssessment.NEEDS_USER_CONFIRMATION
+            "medium" -> if (autonomousModeEnabled) RiskAssessment.ALLOWED else RiskAssessment.NEEDS_USER_CONFIRMATION
             else -> RiskAssessment.ALLOWED
         }
     }
