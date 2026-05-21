@@ -21,22 +21,25 @@ fun AgentDashboard() {
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold
         )
+        Text(
+            "AI Edge Gallery Pro Edition",
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.secondary
+        )
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Model Status Section
-        Text("Active Intelligence Layers", style = MaterialTheme.typography.titleMedium)
+        Text("Active Intelligence Core", style = MaterialTheme.typography.titleMedium)
         Spacer(modifier = Modifier.height(8.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            StatusCard(title = "Brain Engine", subtitle = "Gemma 4 E2B", status = "Reasoning...")
-            StatusCard(title = "Action Engine", subtitle = "FunctionGemma", status = "Ready")
+            StatusCard(title = "Brain (Reasoning)", subtitle = "Gemma 4 E2B", status = "Active")
+            StatusCard(title = "Hands (Execution)", subtitle = "FunctionGemma", status = "Ready")
         }
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // System Health
         Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
             Column(modifier = Modifier.padding(16.dp)) {
-                Text("System Health", style = MaterialTheme.typography.titleSmall)
+                Text("Neural Health", style = MaterialTheme.typography.titleSmall)
                 Spacer(modifier = Modifier.height(8.dp))
                 LinearProgressIndicator(progress = 0.4f, modifier = Modifier.fillMaxWidth())
                 Text("Inference Latency: 12ms", style = MaterialTheme.typography.bodySmall)
@@ -45,10 +48,10 @@ fun AgentDashboard() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Text("Recent Autonomous Actions", style = MaterialTheme.typography.titleMedium)
+        Text("Autonomous Action Log", style = MaterialTheme.typography.titleMedium)
         LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.weight(1f)) {
-            items(5) { i ->
-                ActionItem(action = "Executed skill: mobile.open_app", time = "2m ago")
+            items(10) { i ->
+                ActionItem(action = "Agent triggered: ${if (i % 2 == 0) "mobile.open_app" else "ai.plan_task"}", time = "${i * 5}m ago")
             }
         }
     }
@@ -56,7 +59,7 @@ fun AgentDashboard() {
 
 @Composable
 fun StatusCard(title: String, subtitle: String, status: String) {
-    Card(modifier = Modifier.width(160.dp)) {
+    Card(modifier = Modifier.width(170.dp)) {
         Column(modifier = Modifier.padding(12.dp)) {
             Text(title, style = MaterialTheme.typography.labelMedium)
             Text(subtitle, style = MaterialTheme.typography.bodySmall, color = Color.Gray)

@@ -22,15 +22,15 @@ Agent OS requires two primary models to function:
 
 ### 🧠 Agent Dashboard
 The Dashboard is your home screen. It shows:
-- **System Health**: CPU/GPU utilization for AI tasks.
-- **Active Tasks**: Real-time status of any ongoing autonomous operations.
-- **Memory Stats**: Current context window usage.
+- **Active Intelligence Core**: Status of the Brain (Reasoning) and Hands (Execution) layers.
+- **Neural Health**: Real-time monitoring of inference latency and CPU/GPU load.
+- **Autonomous Action Log**: A live history of skills triggered by the agent kernel.
 
 ### ⚙️ Skill Explorer
 Browse the library of 100+ skills. You can:
 - **Search**: Find specific automation capabilities (e.g., "WiFi", "Summarize").
-- **Enable/Disable**: Toggle skills on or off to customize your agent's abilities.
-- **View Risk**: See the risk assessment level (Low/Medium/High) for each skill.
+- **Categories**: Filter skills by System, Mobile, AI, and more.
+- **Enable/Disable**: Control which skills the agent is allowed to use.
 
 ---
 
@@ -38,19 +38,19 @@ Browse the library of 100+ skills. You can:
 
 ### Chat + Action Mode
 Enter the chat interface to interact with your agent.
-1.  **Ask a Question**: "Plan a trip and set reminders."
-2.  **Reasoning Step**: You will see the agent's internal "thinking" process as it uses Gemma 4 to break down the task.
-3.  **Execution Step**: The agent will automatically call skills (e.g., `ai.plan_task`, `mobile.set_alarm`) to complete the request.
-4.  **Confirmation**: For high-risk actions (like sending a message), the **Safety Guard** will ask for your approval.
+1.  **Ask a Question**: "Find my schedule and plan my evening."
+2.  **Reasoning Step (🧠)**: You will see the agent's internal "thinking" process as it uses Gemma 4 to analyze your intent.
+3.  **Execution Step (⚙️)**: The agent will automatically call specific skills (e.g., `mobile.open_calendar`, `ai.plan_task`) to complete the request.
+4.  **Confirmation**: For sensitive actions, the system will prompt you for final approval.
 
 ---
 
 ## 🔌 4. Advanced: Custom Skills
 
 You can extend your agent by adding custom JSON skill definitions.
-1.  Create a file named `myskill.json` following the [Skill Specification](../SKILL_SPEC.md).
+1.  Create a file named `myskill.json` following the standardized schema.
 2.  Place it in the `skills/` directory.
-3.  Reboot the app to register the new capability.
+3.  The agent kernel will automatically register the new capability on next boot.
 
 ---
 
@@ -58,9 +58,3 @@ You can extend your agent by adding custom JSON skill definitions.
 - **100% Offline**: All processing happens on your device. No data ever leaves your phone.
 - **Audit Log**: Every skill execution is logged locally for your review.
 - **Permission Control**: The agent only has access to the Android permissions you explicitly grant.
-
----
-
-## 🆘 Troubleshooting
-- **Slow Performance**: Ensure you have at least 8GB of RAM for Gemma 4 reasoning.
-- **Skill Failure**: Check if the required Android permission (e.g., Calendar, Location) is enabled in your phone settings.
