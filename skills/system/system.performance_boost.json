@@ -1,0 +1,8 @@
+{
+  "name": "system.performance_boost",
+  "model": "FunctionGemma_270M_Mobile_Actions",
+  "trigger": ["speed up phone", "boost performance"],
+  "input": {},
+  "risk": "low",
+  "steps": ["free_ram", "kill_background_processes"]
+}

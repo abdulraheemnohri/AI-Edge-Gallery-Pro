@@ -1,0 +1,8 @@
+{
+  "name": "agent.self_skill_generator",
+  "model": "Gemma4_E2B",
+  "trigger": ["create new skill", "learn new ability"],
+  "input": { "description": "string" },
+  "risk": "high",
+  "steps": ["design_skill", "validate_schema", "register"]
+}
